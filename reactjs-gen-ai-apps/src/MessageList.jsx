@@ -55,8 +55,7 @@ const BotMessage = ({ msg }) => {
 
 
             return [
-                <CopyToClipboard key={1} copyButtonText="Copy html" copySuccessText="copied!" textToCopy={html_msg} />,
-                <CopyToClipboard key={2} copyButtonText="Copy raw" copySuccessText="copied!" textToCopy={item.text} />,
+                <CopyToClipboard key={2} copyButtonText="Copy" copySuccessText="Copied!" textToCopy={item.text} />,
                 <div key={i} className="bot-message" dangerouslySetInnerHTML={{ __html: html_msg }} ></div>]
         }
         if (item.type === "image") {
@@ -68,7 +67,7 @@ const BotMessage = ({ msg }) => {
     return (<Grid
         disableGutters
         gridDefinition={[{ colspan: 11, }, { colspan: 7, }]}>
-        <Container variant="stacked" data-sender="bot" header={<strong>Respuesta LLM</strong>}>
+        <Container variant="stacked" data-sender="bot" header={<strong>LLM Response</strong>}>
             {contentJSX}
         </Container>
     </Grid>)
